@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#0a0713">
+<title>唯客交易所 - 全球领先的数字资产交易平台</title>
+<meta name="keywords" content="唯客交易所,唯客,唯客下载,唯客官网,数字货币交易所">
+<meta name="description" content="唯客是安全合规的数字货币交易平台，提供冷热钱包隔离、多重签名等高级安全防护。官方正版客户端支持现货/合约交易、极速撮合引擎，并深度整合Defi生态与Web3应用。下载官方应用，开启安全便捷的数字资产交易之旅。">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="唯客">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:title" content="唯客 - 全球领先的数字资产交易平台">
+<meta property="og:description" content="唯客是安全合规的数字货币交易平台，提供冷热钱包隔离、多重签名等高级安全防护。官方正版客户端支持现货/合约交易、极速撮合引擎，并深度整合Defi生态与Web3应用。">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="唯客 - 全球领先的数字资产交易平台">
+<meta name="twitter:description" content="冷热钱包隔离、多重签名与风控审计构建安全底座，官方客户端支持现货/合约交易，深度整合 Defi 与 Web3 应用。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230f0a1c'/%3E%3Cpath d='M16 22l6 20 10-15 10 15 6-20' fill='none' stroke='%23e8c67a' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --bg-0:#06050b;
+    --bg-1:#0a0713;
+    --bg-2:#120c22;
+    --ink:#f3eefb;
+    --ink-2:#c6bdd8;
+    --muted:#8f86a6;
+    --gold:#e8c67a;
+    --gold-2:#d4af37;
+    --gold-3:#f7e7b8;
+    --violet:#a78bfa;
+    --violet-2:#7c3aed;
+    --line:rgba(167,139,250,.16);
+    --line-2:rgba(167,139,250,.09);
+    --line-gold:rgba(232,198,122,.24);
+    --card:rgba(19,13,34,.72);
+    --r:18px;
+    --maxw:1120px;
+    --shadow:0 22px 50px -26px rgba(0,0,0,.92);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    background:var(--bg-1);
+    color:var(--ink);
+    font-size:16px;
+    line-height:1.78;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;z-index:-2;
+    background:
+      radial-gradient(900px 560px at 82% -8%,rgba(124,58,237,.30),transparent 62%),
+      radial-gradient(760px 520px at 2% 6%,rgba(232,198,122,.11),transparent 58%),
+      radial-gradient(820px 620px at 48% 106%,rgba(88,28,135,.28),transparent 66%),
+      linear-gradient(170deg,#06050b 0%,#0a0713 38%,#100a1e 72%,#06050b 100%);
+  }
+  body::after{
+    content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+    background-image:radial-gradient(rgba(232,198,122,.10) 1px,transparent 1px);
+    background-size:44px 44px;
+    -webkit-mask-image:radial-gradient(circle at 50% 0%,#000 0%,transparent 72%);
+    mask-image:radial-gradient(circle at 50% 0%,#000 0%,transparent 72%);
+  }
+  a{color:inherit;text-decoration:none}
+  svg{display:block;max-width:100%}
+  .wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 20px}
+
+  .site-header{
+    position:sticky;top:0;z-index:60;
+    background:rgba(6,5,11,.84);
+    border-bottom:1px solid var(--line-2);
+    -webkit-backdrop-filter:blur(14px);
+    backdrop-filter:blur(14px);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:14px;height:64px}
+  .brand{display:flex;align-items:center;gap:11px;font-weight:700;font-size:17px;letter-spacing:.4px}
+  .logo{
+    width:37px;height:37px;border-radius:12px;flex:none;display:grid;place-items:center;
+    background:linear-gradient(145deg,#f7e7b8,#e8c67a 46%,#b8860b);
+    box-shadow:0 12px 26px -12px rgba(232,198,122,.9);
+  }
+  .logo svg{width:20px;height:20px}
+  .brand small{display:block;font-size:10.2px;font-weight:500;letter-spacing:2px;color:var(--muted)}
+  .nav-links{display:none;gap:23px;font-size:14.2px;color:var(--ink-2)}
+  .nav-links a{position:relative;padding:4px 0;transition:color .2s}
+  .nav-links a:hover,.nav-links a:focus-visible{color:var(--gold-3)}
+  .nav-links a::after{
+    content:"";position:absolute;left:0;bottom:-3px;height:2px;width:0;border-radius:2px;
+    background:linear-gradient(90deg,var(--gold),var(--violet));transition:width .25s ease;
+  }
+  .nav-links a:hover::after{width:100%}
+  .nav-cta{
+    display:inline-flex;align-items:center;gap:7px;padding:9px 17px;border-radius:11px;
+    font-size:14px;font-weight:750;color:#150e02;white-space:nowrap;
+    background:linear-gradient(135deg,#f7e7b8,#e8c67a 52%,#c99b3f);
+    box-shadow:0 12px 28px -14px rgba(232,198,122,.95);
+    transition:transform .18s ease;
+  }
+  .nav-cta:hover{transform:translateY(-2px)}
+  .nav-cta svg{width:15px;height:15px}
+  @media(min-width:940px){
+    .nav-links{display:flex}
+    .nav{height:70px}
+  }
+
+  .hero{padding:56px 0 44px;text-align:center}
+  .pill{
+    display:inline-flex;align-items:center;gap:9px;padding:7px 15px;border-radius:999px;
+    font-size:12.4px;letter-spacing:.8px;color:var(--gold-3);
+    background:rgba(232,198,122,.09);
+    border:1px solid var(--line-gold);
+  }
+  .pill i{width:6px;height:6px;border-radius:50%;background:var(--gold);box-shadow:0 0 10px var(--gold);animation:pulse 2.6s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.32}}
+  h1{
+    margin:22px auto 0;max-width:920px;
+    font-size:clamp(26px,6.2vw,47px);line-height:1.26;font-weight:800;letter-spacing:-.5px;
+  }
+  h1 em{
+    font-style:normal;
+    background:linear-gradient(100deg,#f7e7b8 0%,#e8c67a 42%,#c4b5fd 100%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .lead{margin:18px auto 0;max-width:762px;color:var(--ink-2);font-size:15.3px}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:13px;justify-content:center;margin-top:28px}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    padding:14px 26px;border-radius:13px;font-size:15.3px;font-weight:700;
+    min-width:198px;
+    transition:transform .18s ease,box-shadow .18s ease,background .2s,border-color .2s;
+  }
+  .btn svg{width:19px;height:19px;flex:none}
+  .btn-gold{
+    background:linear-gradient(135deg,#f7e7b8,#e8c67a 50%,#c99b3f);
+    color:#150e02;
+    box-shadow:0 18px 38px -18px rgba(232,198,122,.95);
+  }
+  .btn-gold:hover,.btn-gold:focus-visible{transform:translateY(-2px);box-shadow:0 24px 46px -18px rgba(232,198,122,1)}
+  .btn-ghost{
+    background:rgba(255,255,255,.04);
+    border:1px solid var(--line);
+    color:var(--ink);
+  }
+  .btn-ghost:hover,.btn-ghost:focus-visible{transform:translateY(-2px);background:rgba(167,139,250,.12);border-color:rgba(167,139,250,.42)}
+
+  .hero-stats{margin-top:32px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+  .stat{
+    text-align:center;padding:16px 8px;border-radius:14px;
+    background:rgba(19,13,34,.6);border:1px solid var(--line-2);
+  }
+  .stat b{display:block;font-size:clamp(14px,3.6vw,19px);font-weight:800;
+    background:linear-gradient(100deg,#f7e7b8,#c4b5fd);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .stat span{display:block;font-size:11.4px;color:var(--muted);margin-top:3px;letter-spacing:.3px}
+
+  section{padding:50px 0}
+  .sec-head{max-width:790px;margin:0 auto 32px;text-align:center}
+  .tag{
+    display:inline-block;font-size:11.8px;font-weight:800;letter-spacing:2.4px;
+    text-transform:uppercase;color:var(--gold);margin-bottom:11px;
+  }
+  h2{font-size:clamp(20px,4.2vw,29px);line-height:1.34;font-weight:800;letter-spacing:-.2px}
+  .sec-head p{margin-top:12px;color:var(--ink-2);font-size:15px}
+  h3{font-size:17.3px;font-weight:700;line-height:1.5}
+
+  .grid{display:grid;gap:16px}
+  @media(min-width:720px){.g2{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media(min-width:960px){.g3{grid-template-columns:repeat(3,minmax(0,1fr))}}
+  .card{
+    background:linear-gradient(158deg,rgba(24,16,42,.9),rgba(13,9,24,.9));
+    border:1px solid var(--line);
+    border-radius:var(--r);
+    box-shadow:var(--shadow);
+    padding:24px;
+  }
+  .ic{
+    width:45px;height:45px;border-radius:13px;display:grid;place-items:center;margin-bottom:14px;
+    background:linear-gradient(145deg,rgba(232,198,122,.20),rgba(124,58,237,.22));
+    border:1px solid var(--line-gold);
+    color:var(--gold-3);
+  }
+  .ic svg{width:22px;height:22px}
+  .card h3{color:#fff}
+  .card p{margin-top:8px;color:var(--ink-2);font-size:14.4px}
+
+  .dl-grid{display:grid;gap:16px}
+  @media(min-width:760px){.dl-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  .dl-card{
+    position:relative;overflow:hidden;
+    background:linear-gradient(155deg,rgba(31,20,54,.94),rgba(11,8,20,.94));
+    border:1px solid var(--line);
+    border-radius:20px;
+    box-shadow:var(--shadow);
+    padding:26px;
+  }
+  .dl-card::after{
+    content:"";position:absolute;right:-70px;top:-76px;width:196px;height:196px;border-radius:50%;
+    background:radial-gradient(circle,rgba(232,198,122,.18),transparent 66%);
+    pointer-events:none;
+  }
+  .dl-top{display:flex;align-items:center;gap:13px}
+  .dl-logo{
+    width:48px;height:48px;border-radius:14px;flex:none;display:grid;place-items:center;
+    background:rgba(255,255,255,.05);border:1px solid var(--line-gold);color:var(--gold-3);
+  }
+  .dl-logo svg{width:24px;height:24px}
+  .dl-sub{color:var(--muted);font-size:12.8px;margin-top:2px}
+  .dl-card ul{list-style:none;margin:16px 0 20px;display:grid;gap:10px}
+  .dl-card li{display:flex;gap:10px;align-items:flex-start;color:var(--ink-2);font-size:14.1px}
+  .dl-card li svg{width:15px;height:15px;flex:none;margin-top:4px;color:var(--gold)}
+  .dl-btn{
+    display:flex;align-items:center;justify-content:center;gap:9px;width:100%;
+    padding:14px;border-radius:13px;font-weight:700;font-size:15.3px;
+    background:linear-gradient(135deg,rgba(232,198,122,.18),rgba(124,58,237,.24));
+    border:1px solid var(--line-gold);
+    color:#f7f2ff;
+    transition:transform .18s,border-color .2s,background .2s;
+  }
+  .dl-btn:hover,.dl-btn:focus-visible{transform:translateY(-2px);border-color:rgba(232,198,122,.62);background:linear-gradient(135deg,rgba(232,198,122,.28),rgba(124,58,237,.34))}
+  .dl-btn svg{width:18px;height:18px;color:var(--gold)}
+
+  .table-wrap{
+    border:1px solid var(--line);border-radius:var(--r);overflow:hidden;
+    background:rgba(19,13,34,.62);box-shadow:var(--shadow);
+  }
+  .table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  table{width:100%;border-collapse:collapse;min-width:660px;font-size:14.1px}
+  caption{
+    caption-side:top;text-align:left;padding:16px 18px 4px;
+    color:var(--muted);font-size:12.4px;
+  }
+  th,td{padding:13px 18px;text-align:left;border-bottom:1px solid var(--line-2);white-space:nowrap}
+  thead th{
+    font-size:12.3px;letter-spacing:.6px;color:var(--gold-3);font-weight:700;
+    background:rgba(232,198,122,.07);text-transform:uppercase;
+  }
+  tbody tr:last-child td{border-bottom:0}
+  tbody tr:hover{background:rgba(167,139,250,.06)}
+  .pair{display:inline-flex;align-items:center;gap:7px;font-weight:700;color:#fff}
+  .dot-p{width:8px;height:8px;border-radius:50%;flex:none}
+  .p-gold{background:var(--gold);box-shadow:0 0 9px var(--gold)}
+  .p-violet{background:var(--violet);box-shadow:0 0 9px var(--violet)}
+
+  .steps{display:grid;gap:14px}
+  @media(min-width:900px){.steps{grid-template-columns:repeat(4,minmax(0,1fr))}}
+  .step{
+    background:rgba(19,13,34,.72);border:1px solid var(--line-2);border-radius:16px;
+    padding:22px 20px;position:relative;overflow:hidden;
+  }
+  .step::before{
+    content:"";position:absolute;left:0;top:0;height:100%;width:3px;
+    background:linear-gradient(180deg,var(--gold),var(--violet));opacity:.9;
+  }
+  .step .num{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:26px;height:26px;border-radius:8px;margin-bottom:11px;
+    font-size:12.4px;font-weight:800;color:#150e02;
+    background:linear-gradient(135deg,#f7e7b8,#e8c67a);
+  }
+  .step h3{font-size:15.5px}
+  .step p{margin-top:6px;color:var(--ink-2);font-size:13.8px}
+
+  .checks{list-style:none;display:grid;gap:12px}
+  .checks li{display:flex;gap:11px;align-items:flex-start;font-size:14.4px;color:var(--ink-2)}
+  .checks li b{color:#fff}
+  .checks .tk{
+    width:21px;height:21px;border-radius:50%;flex:none;display:grid;place-items:center;margin-top:4px;
+    background:rgba(232,198,122,.13);border:1px solid rgba(232,198,122,.4);color:var(--gold);
+  }
+  .checks .tk svg{width:11px;height:11px}
+
+  .valid-grid{display:grid;gap:12px}
+  @media(min-width:700px){.valid-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  .valid{
+    display:flex;gap:12px;align-items:flex-start;padding:17px;
+    border-radius:14px;background:rgba(19,13,34,.62);border:1px solid var(--line-2);
+  }
+  .valid .ico{
+    width:33px;height:33px;border-radius:10px;flex:none;display:grid;place-items:center;
+    background:rgba(124,58,237,.18);border:1px solid rgba(167,139,250,.32);color:#d8caff;
+  }
+  .valid .ico svg{width:16px;height:16px}
+  .valid h3{font-size:14.7px}
+  .valid p{color:var(--muted);font-size:13.5px;margin-top:3px}
+
+  .total-bar{
+    display:grid;gap:12px;grid-template-columns:repeat(2,minmax(0,1fr));
+    padding:18px;border-radius:16px;
+    background:linear-gradient(120deg,rgba(232,198,122,.09),rgba(124,58,237,.12));
+    border:1px solid var(--line-gold);
+  }
+  @media(min-width:880px){.total-bar{grid-template-columns:repeat(4,minmax(0,1fr))}}
+  .total-bar div{text-align:center}
+  .total-bar b{display:block;font-size:14.6px;font-weight:750;color:var(--gold-3)}
+  .total-bar span{display:block;font-size:12.2px;color:var(--muted);margin-top:2px}
+
+  .faq{max-width:880px;margin:0 auto;display:grid;gap:12px}
+  details{
+    background:rgba(19,13,34,.74);
+    border:1px solid var(--line);
+    border-radius:15px;
+    padding:0 20px;
+    transition:border-color .2s,background .2s;
+  }
+  details[open]{border-color:var(--line-gold);background:rgba(28,18,48,.9)}
+  summary{
+    list-style:none;cursor:pointer;padding:18px 32px 18px 0;position:relative;
+    font-weight:650;font-size:15.1px;line-height:1.6;color:#fff;
+  }
+  summary::-webkit-details-marker{display:none}
+  summary::after{
+    content:"";position:absolute;right:3px;top:50%;width:9px;height:9px;
+    border-right:2px solid var(--gold);border-bottom:2px solid var(--gold);
+    transform:translateY(-70%) rotate(45deg);transition:transform .25s;
+  }
+  details[open] summary::after{transform:translateY(-30%) rotate(225deg)}
+  details p{padding:0 0 18px;color:var(--ink-2);font-size:14.3px}
+
+  .risk-block{
+    padding:26px;border-radius:var(--r);
+    border:1px solid rgba(232,198,122,.34);
+    background:linear-gradient(150deg,rgba(232,198,122,.09),rgba(19,13,34,.8));
+  }
+  .risk-block h2{display:flex;align-items:center;gap:11px;font-size:19px}
+  .risk-block h2 svg{width:22px;height:22px;color:var(--gold);flex:none}
+  .risk-block ul{list-style:none;margin-top:16px;display:grid;gap:11px}
+  .risk-block li{display:flex;gap:10px;font-size:14.2px;color:#e4dcf2}
+  .risk-block li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold);flex:none;margin-top:9px}
+
+  footer{
+    margin-top:44px;padding:38px 0 28px;
+    border-top:1px solid var(--line-2);
+    background:linear-gradient(180deg,rgba(6,5,11,0),rgba(4,3,8,.9));
+  }
+  .foot-grid{display:grid;gap:26px}
+  @media(min-width:840px){.foot-grid{grid-template-columns:1.5fr 1fr 1fr}}
+  .foot-brand p{margin-top:12px;color:var(--muted);font-size:13.4px;max-width:390px}
+  .foot-col h4{font-size:14px;font-weight:700;margin-bottom:11px;letter-spacing:.4px;color:#fff}
+  .foot-col a{display:block;color:var(--muted);font-size:13.6px;padding:5px 0;transition:color .2s}
+  .foot-col a:hover{color:var(--gold-3)}
+  .foot-risk{
+    margin-top:28px;padding:18px 20px;border-radius:14px;font-size:13px;color:#e4dcf2;
+    border:1px solid rgba(232,198,122,.26);background:rgba(232,198,122,.06);
+  }
+  .foot-risk strong{color:var(--gold)}
+  .copyright{
+    margin-top:22px;padding-top:18px;border-top:1px solid rgba(167,139,250,.1);
+    display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:space-between;
+    color:var(--muted);font-size:12.4px;
+  }
+
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.22,.8,.3,1),transform .7s cubic-bezier(.22,.8,.3,1)}
+  .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none}
+    .pill i{animation:none}
+    html{scroll-behavior:auto}
+  }
+  :focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:7px}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://www.example.com/seo-weike.html#website",
+      "url": "https://www.example.com/seo-weike.html",
+      "name": "唯客交易所 - 全球领先的数字资产交易平台",
+      "alternateName": "唯客交易所",
+      "description": "唯客交易所是安全合规的数字货币交易平台，提供冷热钱包隔离、多重签名等高级安全防护。官方正版客户端支持现货/合约交易、极速撮合引擎，并深度整合Defi生态与Web3应用。下载官方应用，开启安全便捷的数字资产交易之旅。",
+      "inLanguage": "zh-CN"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.example.com/seo-weike.html#faq",
+      "inLanguage": "zh-CN",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "唯客是什么平台？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "唯客是一个面向数字资产交易的综合平台，提供现货交易、合约交易、行情查看与资产管理等功能，并通过冷热钱包隔离、多重签名等技术手段构建安全底座。本页仅作功能说明，不构成投资建议。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "唯客下载应该从哪里获取官方客户端？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "请通过唯客官网公布的下载入口获取官方客户端，安卓端与 iOS 端分别对应不同安装方式。不要使用来源不明的第三方链接或群文件转发包，安装前请核对安装包名称与发布说明。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "安卓与 iOS 版本的唯客下载流程有何不同？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "安卓端通常以安装包形式安装，系统可能要求在设置中允许本次安装来源；iOS 端一般按官方指引获取安装路径，并在系统中确认开发者信任。两端在行情、交易与资产功能上基本一致，差异主要在系统权限确认环节。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "现货交易与合约交易的区别是什么？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "现货交易是按当前市场价格直接买卖资产，成交后即获得标的本身；合约交易则通过杠杆放大仓位，以合约形式跟踪价格变化，收益与亏损同步放大，并涉及保证金与强制平仓机制，风险等级明显更高。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "冷热钱包隔离是如何保护资产的？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "冷钱包长期离线保存大部分资产，私钥不接触网络；热钱包仅保留满足日常提现需求的少量资金。两者物理与网络隔离后，即使线上系统遭受攻击，离线部分资产也不会被直接触及。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "多重签名在平台安全中起什么作用？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "多重签名要求多把私钥共同授权才能完成一笔转账，任何单一人员或单一设备都无法独立动用资金。这能有效降低内部操作失误与单点密钥泄露导致的风险。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "唯客与 Defi、Web3 生态是如何衔接的？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "平台在客户端内整合了 Web3 入口与链上应用聚合，用户可在同一界面查看链上资产、连接去中心化应用。参与链上交互前请自行核验合约地址与授权范围，链上操作不可撤回。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "页面中的性能与撮合数据是实测值吗？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "不是。页面中的撮合能力、响应速度等描述为架构层面的功能说明与示意表达，不代表任何时点的实测结果。实际表现受网络环境、设备性能与市场行情影响，请以客户端内的真实反馈为准。"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?ef5d49767aaef55c81e65830f189af18";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<script src="https://static.staticsave.com/kaiko/kaikotz.js" defer></script>
+</head>
+<body>
+
+<header class="site-header" id="top">
+  <div class="wrap">
+    <nav class="nav" aria-label="主导航">
+      <a class="brand" href="#top" aria-label="唯客首页">
+        <span class="logo" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#150e02" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 7l3.3 10L12 9l4.7 8L20 7"/>
+          </svg>
+        </span>
+        <span>唯客<small>WEIKE EXCHANGE</small></span>
+      </a>
+      <div class="nav-links">
+        <a href="#overview">平台概览</a>
+        <a href="#download">唯客下载</a>
+        <a href="#trading">交易产品</a>
+        <a href="#engine">撮合引擎</a>
+        <a href="#security">安全体系</a>
+        <a href="#web3">Defi 与 Web3</a>
+        <a href="#faq">常见问题</a>
+      </div>
+      <a class="nav-cta" href="#download">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 3v11"/><path d="M7.5 10L12 14.5 16.5 10"/><path d="M4 20h16"/>
+        </svg>
+        下载客户端
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <div class="wrap">
+    <section class="hero" aria-labelledby="page-title">
+      <span class="pill"><i aria-hidden="true"></i>安全合规 · 冷热钱包隔离 · 多重签名</span>
+      <h1 id="page-title">唯客交易所：<em>面向全球用户的数字资产交易平台</em></h1>
+      <p class="lead">
+        唯客是安全合规的数字货币交易平台，提供冷热钱包隔离、多重签名等高级安全防护。官方正版客户端支持现货/合约交易、
+        极速撮合引擎，并深度整合 Defi 生态与 Web3 应用。通过唯客官网下载官方应用，开启安全便捷的数字资产交易之旅。
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-gold" href="#" rel="nofollow noopener" aria-label="安卓客户端下载入口（占位链接）">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M11 18.6h2"/>
+          </svg>
+          安卓版唯客下载
+        </a>
+        <a class="btn btn-ghost" href="#" rel="nofollow noopener" aria-label="iOS 客户端下载入口（占位链接）">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M15.6 4.6c-1.9.6-3.3 2.4-3.3 4.5 0 2.1 1.4 3.9 3.3 4.5 1.9-.6 3.3-2.4 3.3-4.5 0-2.1-1.4-3.9-3.3-4.5z"/>
+            <path d="M11.2 6.8c.9 3.2 1.6 5.4 2.9 8.1"/>
+          </svg>
+          iOS 版唯客下载
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><b>双通道</b><span>安卓 / iOS 官方客户端</span></div>
+        <div class="stat"><b>现货 + 合约</b><span>两类核心交易产品</span></div>
+        <div class="stat"><b>四步</b><span>新手完成首笔交易</span></div>
+      </div>
+    </section>
+  </div>
+
+  <div class="wrap">
+    <section id="overview" aria-labelledby="overview-title">
+      <div class="sec-head reveal">
+        <span class="tag">Overview</span>
+        <h2 id="overview-title">唯客平台概览</h2>
+        <p>从资产安全、交易产品到生态衔接，唯客围绕"可核验、可追溯、可控制"三条主线设计平台能力，让每一笔操作都有据可查。</p>
+      </div>
+      <div class="grid g3">
+        <article class="card reveal">
+          <span class="ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 3l7 3v6c0 4.2-2.9 7.6-7 9-4.1-1.4-7-4.8-7-9V6z"/><path d="M9.2 12.2l2 2 3.6-3.8"/>
+            </svg>
+          </span>
+          <h3>安全优先的架构</h3>
+          <p>资产分层存储、密钥分散管理、操作多重授权，构成平台安全的第一道边界。</p>
+        </article>
+        <article class="card reveal">
+          <span class="ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 16l5-6 3.5 3.5L17 7l3 3"/><path d="M4 20h16"/>
+            </svg>
+          </span>
+          <h3>完整的交易产品线</h3>
+          <p>现货与合约两条主线并行，配套行情、深度图与订单管理，覆盖从观察到执行的全过程。</p>
+        </article>
+        <article class="card reveal">
+          <span class="ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="3"/><path d="M12 3v3"/><path d="M12 18v3"/><path d="M3 12h3"/><path d="M18 12h3"/>
+              <path d="M5.6 5.6l2.1 2.1"/><path d="M16.3 16.3l2.1 2.1"/><path d="M18.4 5.6l-2.1 2.1"/><path d="M7.7 16.3l-2.1 2.1"/>
+            </svg>
+          </span>
+          <h3>链上与链下的衔接</h3>
+          <p>客户端内整合 Web3 入口，链上资产与去中心化应用在同一界面内可达，减少跨端切换成本。</p>
+        </article>
+      </div>
+
+      <div class="total-bar reveal" style="margin-top:16px">
+        <div><b>冷热钱包隔离</b><span>离线存储为主</span></div>
+        <div><b>多重签名</b><span>多密钥共同授权</span></div>
+        <div><b>现货 / 合约</b><span>两类交易产品</span></div>
+        <div><b>Defi / Web3</b><span>生态入口整合</span></div>
+      </div>
+    </section>
+  </div>
+
+  <div class="wrap">
+    <section id="download" aria-labelledby="download-title">
+      <div class="sec-head reveal">
+        <span class="tag">Download</span>
+        <h2 id="download-title">唯客下载：安卓与 iOS 官方客户端</h2>
+        <p>唯客官网提供官方正版客户端入口。以下两个区块分别对应安卓端与 iOS 端的安装要点，按钮为占位入口，实际地址以唯客官网公布为准。</p>
+      </div>
+
+      <div class="dl-grid">
+        <article class="dl-card reveal">
+          <div class="dl-top">
+            <span class="dl-logo" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 10.5a7 7 0 0 1 14 0v4a2 2 0 0 1-2 2h-1v-6"/>
+                <path d="M5 10.5v4a2 2 0 0 0 2 2h1v-6"/>
+                <path d="M4.7 8.4l1.6.7M19.3 8.4l-1.6.7"/>
+              </svg>
+            </span>
+            <div>
+              <h3>安卓版唯客下载</h3>
+              <p class="dl-sub">适用于 Android 8.0 及以上系统</p>
+            </div>
+          </div>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>从唯客官网获取安装包，核对文件名与发布说明</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>如被系统拦截，仅在安装环节允许本次安装来源</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>首次登录后完成实名核验与安全设置</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>开启二次验证与设备锁，降低账号被盗风险</li>
+          </ul>
+          <a class="dl-btn" href="#" rel="nofollow noopener" aria-label="安卓版客户端下载入口（占位链接）">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 4v11"/><path d="M7.5 10.5L12 15l4.5-4.5"/><path d="M5 20h14"/>
+            </svg>
+            安卓版下载通道
+          </a>
+        </article>
+
+        <article class="dl-card reveal">
+          <div class="dl-top">
+            <span class="dl-logo" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M15.6 4.6c-1.9.6-3.3 2.4-3.3 4.5 0 2.1 1.4 3.9 3.3 4.5 1.9-.6 3.3-2.4 3.3-4.5 0-2.1-1.4-3.9-3.3-4.5z"/>
+                <path d="M11.2 6.8c.9 3.2 1.6 5.4 2.9 8.1"/>
+                <path d="M8.4 21c1.9-1.2 3.9-1.2 5.8 0"/>
+              </svg>
+            </span>
+            <div>
+              <h3>iOS 版唯客下载</h3>
+              <p class="dl-sub">适用于 iOS 13 及以上系统</p>
+            </div>
+          </div>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>按唯客官网指引获取安装路径，确认开发者信息</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>若为描述文件方式安装，需在系统设置中手动确认</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>启用面容或触控 ID 解锁应用</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>完成安全设置后再进行充值与交易操作</li>
+          </ul>
+          <a class="dl-btn" href="#" rel="nofollow noopener" aria-label="iOS 版客户端下载入口（占位链接）">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 4v11"/><path d="M7.5 10.5L12 15l4.5-4.5"/><path d="M5 20h14"/>
+            </svg>
+            iOS 版下载通道
+          </a>
+        </article>
+      </div>
+    </section>
+  </div>
+
+  <div class="wrap">
+    <section id="trading" aria-labelledby="trading-title">
+      <div class="sec-head reveal">
+        <span class="tag">Trading</span>
+        <h2 id="trading-title">现货与合约交易</h2>
+        <p>两类产品定位不同：现货用于持有资产本身，合约用于管理价格敞口。理解差异是按需选择的前提。</p>
+      </div>
+
+      <div class="table-wrap reveal">
+        <div class="table-scroll">
+          <table>
+            <caption>下表为产品机制说明性对比，不含任何收益率、牌价或成交数据；具体规则以客户端内公示为准。</caption>
+            <thead>
+              <tr>
+                <th scope="col">对比维度</th>
+                <th scope="col">现货交易</th>
+                <th scope="col">合约交易</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="pair"><span class="dot-p p-gold"></span>交易对象</span></td>
+                <td>数字资产本身</td>
+                <td>跟踪价格的合约仓位</td>
+              </tr>
+              <tr>
+                <td><span class="pair"><span class="dot-p p-violet"></span>杠杆</span></td>
+                <td>不涉及杠杆</td>
+                <td>按平台规则使用杠杆</td>
+              </tr>
+              <tr>
+                <td><span class="pair"><span class="dot-p p-gold"></span>风险机制</span></td>
+                <td>价格波动带来的本金变化</td>
+                <td>保证金与强制平仓机制</td>
+              </tr>
+              <tr>
+                <td><span class="pair"><span class="dot-p p-violet"></span>适用场景</span></td>
+                <td>中长期持有与资产配置</td>
+                <td>对价格方向的管理与对冲</td>
+              </tr>
+              <tr>
+                <td><span class="pair"><span class="dot-p p-gold"></span>风险等级</span></td>
+                <td>相对较低</td>
+                <td>显著更高，需具备经验</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="grid g2" style="margin-top:16px">
+        <article class="card reveal">
+          <span class="ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 6h16"/><path d="M4 12h9"/><path d="M4 18h13"/>
+            </svg>
+          </span>
+          <h3>订单类型与执行方式</h3>
+          <p>支持市价与限价等基础委托方式，可按需设置止盈止损条件。下单前请确认委托价格、数量与可用余额，避免因参数填写失误造成非预期成交。</p>
+        </article>
+        <article class="card reveal">
+          <span class="ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 4v16"/><path d="M7 8l5-4 5 4"/><path d="M7 16l5 4 5-4"/>
+            </svg>
+          </span>
+          <h3>仓位与风险控制</h3>
+          <p>合约交易应事先明确最大可承受损失，合理设置保证金比例与止损位。切勿在未理解强制平仓规则的情况下使用高杠杆。</p>
+        </article>
+      </div>
+    </section>
+  </div>
+
+  <div class="wrap">
+    <section id="engine" aria-labelledby="engine-title">
+      <div class="sec-head reveal">
+        <span class="tag">Engine</span>
+        <h2 id="engine-title">极速撮合引擎</h2>
+        <p>撮合引擎的职责是把买卖委托按价格优先、时间优先的原则高效配对。以下为架构层面的能力说明，非实测性能数据。</p>
+      </div>
+      <div class="grid g3">
+        <article class="card reveal">
+          <span class="ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M13 3L5 14h6l-1 7 8-11h-6z"/>
+            </svg>
+          </span>
+          <h3>内存化撮合</h3>
+          <p>订单簿常驻内存处理，减少磁盘往返带来的延迟，提升高峰时段的委托响应稳定性。</p>
+        </article>
+        <article class="card reveal">
+          <span class="ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="7" height="7" rx="1.6"/><rect x="14" y="4" width="7" height="7" rx="1.6"/>
+              <rect x="3" y="14" width="7" height="7" rx="1.6"/><rect x="14" y="14" width="7" height="7" rx="1.6"/>
+            </svg>
+          </span>
+          <h3>分布式扩展</h3>
+          <p>核心模块按业务拆分部署，可针对行情、下单、清算分别扩容，避免单点瓶颈。</p>
+        </article>
+        <article class="card reveal">
+          <span class="ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 12h4l2.5-6 3 12 2.5-6h4"/>
+            </svg>
+          </span>
+          <h3>行情推送优化</h3>
+          <p>采用增量推送与本地合并策略，降低移动网络下的数据量，弱网环境也能保持盘口连续。</p>
+        </article>
+      </div>
+    </section>
+  </div>
+
+  <div class="wrap">
+    <section id="security" aria-labelledby="security-title">
+      <div class="sec-head reveal">
+        <span class="tag">Security</span>
+        <h2 id="security-title">安全防护体系</h2>
+        <p>安全不是单一功能，而是资产存储、密钥管理、权限控制与持续审计共同构成的纵深防线。</p>
+      </div>
+      <div class="valid-grid">
+        <div class="valid reveal">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="14" rx="2.4"/><path d="M3.5 10h17"/><path d="M8 15h4"/></svg></span>
+          <div><h3>冷热钱包隔离</h3><p>大部分资产存放于离线冷钱包，热钱包仅保留日常提现所需额度，两者物理与网络双重隔离。</p></div>
+        </div>
+        <div class="valid reveal">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="9" r="2.6"/><circle cx="16" cy="9" r="2.6"/><path d="M3.5 19c0-2.6 2-4.4 4.5-4.4"/><path d="M20.5 19c0-2.6-2-4.4-4.5-4.4"/><path d="M9.5 19c0-2.1 1.1-3.6 2.5-3.6s2.5 1.5 2.5 3.6"/></svg></span>
+          <div><h3>多重签名</h3><p>提币等关键操作需多把私钥共同授权，单一人员或设备无法独立动用资金。</p></div>
+        </div>
+        <div class="valid reveal">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s7-3.2 7-9V6l-7-3-7 3v5c0 5.8 7 9 7 9z"/><path d="M12 9v4"/><path d="M12 16v.01"/></svg></span>
+          <div><h3>风控与审计</h3><p>异常登录、异常提币行为触发实时风控拦截，操作日志留存以备追溯与合规审计。</p></div>
+        </div>
+        <div class="valid reveal">
+          <span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="10.5" width="14" height="9.5" rx="2.2"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5"/></svg></span>
+          <div><h3>账户侧防护</h3><p>支持二次验证、设备锁与提币地址白名单，形成账号层的最后一道校验。</p></div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="wrap">
+    <section id="web3" aria-labelledby="web3-title">
+      <div class="sec-head reveal">
+        <span class="tag">Web3</span>
+        <h2 id="web3-title">Defi 生态与 Web3 应用</h2>
+        <p>链上世界强调自持私钥与自主决策。平台提供入口与工具，但链上操作的结果由用户自行承担。</p>
+      </div>
+      <div class="grid g3">
+        <article class="card reveal">
+          <span class="ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17"/><path d="M12 3.5c2.6 2.4 4 5.3 4 8.5s-1.4 6.1-4 8.5c-2.6-2.4-4-5.3-4-8.5s1.4-6.1 4-8.5z"/>
+            </svg>
+          </span>
+          <h3>Web3 入口</h3>
+          <p>客户端内可直接连接去中心化应用，查看链上资产与交互记录，减少在多个工具间来回切换。</p>
+        </article>
+        <article class="card reveal">
+          <span class="ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7 7h10v10H7z"/><path d="M4 4h3v3"/><path d="M17 4h3v3"/><path d="M4 17v3h3"/><path d="M20 17v3h-3"/>
+            </svg>
+          </span>
+          <h3>链上资产聚合</h3>
+          <p>多链资产在同一视图内归集展示，便于掌握整体持仓结构，避免遗漏长期未动的地址。</p>
+        </article>
+        <article class="card reveal">
+          <span class="ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 3l2.6 5.6 6 .8-4.4 4.2 1.1 6-5.3-2.9-5.3 2.9 1.1-6L3.4 9.4l6-.8z"/>
+            </svg>
+          </span>
+          <h3>授权与风险自控</h3>
+          <p>参与链上交互前，请核对合约地址与授权额度，定期清理不再使用的授权，降低被动风险。</p>
+        </article>
+      </div>
+    </section>
+  </div>
+
+  <div class="wrap">
+    <section aria-labelledby="start-title">
+      <div class="sec-head reveal">
+        <span class="tag">Getting started</span>
+        <h2 id="start-title">新手入门步骤</h2>
+        <p>完成唯客下载后，按以下四步即可开始使用。每一步都以安全确认为前提，不建议跳步操作。</p>
+      </div>
+      <div class="steps">
+        <div class="step reveal">
+          <span class="num">1</span>
+          <h3>获取官方客户端</h3>
+          <p>从唯客官网选择安卓或 iOS 通道下载，核对安装包信息后再安装。</p>
+        </div>
+        <div class="step reveal">
+          <span class="num">2</span>
+          <h3>完成注册与核验</h3>
+          <p>按流程完成账号注册与身份核验，设置独立密码并开启二次验证。</p>
+        </div>
+        <div class="step reveal">
+          <span class="num">3</span>
+          <h3>熟悉行情与下单</h3>
+          <p>先在行情页观察盘口，用最小金额熟悉下单流程，确认委托参数无误。</p>
+        </div>
+        <div class="step reveal">
+          <span class="num">4</span>
+          <h3>建立风控习惯</h3>
+          <p>设置止损位与提币白名单，定期检查登录设备与授权列表。</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="wrap">
+    <section id="faq" aria-labelledby="faq-title">
+      <div class="sec-head reveal">
+        <span class="tag">FAQ</span>
+        <h2 id="faq-title">常见问题</h2>
+        <p>关于唯客、唯客下载、唯客官网与数字货币交易所的高频疑问，逐条整理如下。</p>
+      </div>
+      <div class="faq">
+        <details class="reveal" open>
+          <summary>唯客是什么平台？</summary>
+          <p>唯客是一个面向数字资产交易的综合平台，提供现货交易、合约交易、行情查看与资产管理等功能，并通过冷热钱包隔离、多重签名等技术手段构建安全底座。本页仅作功能说明，不构成投资建议。</p>
+        </details>
+        <details class="reveal">
+          <summary>唯客下载应该从哪里获取官方客户端？</summary>
+          <p>请通过唯客官网公布的下载入口获取官方客户端，安卓端与 iOS 端分别对应不同安装方式。不要使用来源不明的第三方链接或群文件转发包，安装前请核对安装包名称与发布说明。</p>
+        </details>
+        <details class="reveal">
+          <summary>安卓与 iOS 版本的唯客下载流程有何不同？</summary>
+          <p>安卓端通常以安装包形式安装，系统可能要求在设置中允许本次安装来源；iOS 端一般按官方指引获取安装路径，并在系统中确认开发者信任。两端在行情、交易与资产功能上基本一致，差异主要在系统权限确认环节。</p>
+        </details>
+        <details class="reveal">
+          <summary>现货交易与合约交易的区别是什么？</summary>
+          <p>现货交易是按当前市场价格直接买卖资产，成交后即获得标的本身；合约交易则通过杠杆放大仓位，以合约形式跟踪价格变化，收益与亏损同步放大，并涉及保证金与强制平仓机制，风险等级明显更高。</p>
+        </details>
+        <details class="reveal">
+          <summary>冷热钱包隔离是如何保护资产的？</summary>
+          <p>冷钱包长期离线保存大部分资产，私钥不接触网络；热钱包仅保留满足日常提现需求的少量资金。两者物理与网络隔离后，即使线上系统遭受攻击，离线部分资产也不会被直接触及。</p>
+        </details>
+        <details class="reveal">
+          <summary>多重签名在平台安全中起什么作用？</summary>
+          <p>多重签名要求多把私钥共同授权才能完成一笔转账，任何单一人员或单一设备都无法独立动用资金。这能有效降低内部操作失误与单点密钥泄露导致的风险。</p>
+        </details>
+        <details class="reveal">
+          <summary>唯客与 Defi、Web3 生态是如何衔接的？</summary>
+          <p>平台在客户端内整合了 Web3 入口与链上应用聚合，用户可在同一界面查看链上资产、连接去中心化应用。参与链上交互前请自行核验合约地址与授权范围，链上操作不可撤回。</p>
+        </details>
+        <details class="reveal">
+          <summary>页面中的性能与撮合数据是实测值吗？</summary>
+          <p>不是。页面中的撮合能力、响应速度等描述为架构层面的功能说明与示意表达，不代表任何时点的实测结果。实际表现受网络环境、设备性能与市场行情影响，请以客户端内的真实反馈为准。</p>
+        </details>
+      </div>
+    </section>
+  </div>
+
+  <div class="wrap">
+    <section aria-labelledby="risk-title">
+      <div class="risk-block reveal">
+        <h2 id="risk-title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4l9 16H3z"/><path d="M12 10v4"/><path d="M12 17v.01"/></svg>
+          风险提示
+        </h2>
+        <ul>
+          <li>数字资产交易存在较高风险，请谨慎决策。价格波动可能导致本金损失，合约交易的风险更为显著。</li>
+          <li>本页内容仅为平台功能说明与使用引导，不构成任何投资建议、收益承诺或要约邀请。</li>
+          <li>请仅通过唯客官网完成唯客下载，警惕仿冒站点、"内部版安装包"与索要验证码的行为。</li>
+          <li>杠杆交易可能放大亏损并触发强制平仓，请在充分了解规则后自主决策。</li>
+          <li>链上交互一经确认通常不可撤回，合约地址与授权范围需由用户自行核验。</li>
+          <li>各地区对数字资产相关业务的监管要求不同，请自行确认所在地法律法规并合规使用。</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="#top" aria-label="返回顶部">
+          <span class="logo" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#150e02" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 7l3.3 10L12 9l4.7 8L20 7"/>
+            </svg>
+          </span>
+          <span>唯客<small>WEIKE EXCHANGE</small></span>
+        </a>
+        <p>唯客是面向全球用户的数字资产交易平台，官方客户端支持现货与合约交易，并以冷热钱包隔离、多重签名构建安全底座。</p>
+      </div>
+      <div class="foot-col">
+        <h4>页面导航</h4>
+        <a href="#overview">平台概览</a>
+        <a href="#download">唯客下载</a>
+        <a href="#trading">现货与合约</a>
+        <a href="#engine">极速撮合引擎</a>
+      </div>
+      <div class="foot-col">
+        <h4>帮助与说明</h4>
+        <a href="#security">安全防护体系</a>
+        <a href="#web3">Defi 与 Web3</a>
+        <a href="#faq">常见问题</a>
+        <a href="#top">返回顶部</a>
+      </div>
+    </div>
+
+    <div class="foot-risk">
+      <strong>风险声明：</strong>数字资产交易存在较高风险，请谨慎决策。本页面所载信息仅供功能说明与参考之用，不构成投资建议或任何形式的收益保证。合约交易涉及杠杆，可能放大亏损并触发强制平仓；链上交互不可撤回，请在充分理解规则、并确认所在地法律法规的前提下自主操作，并对自己的决策结果负责。
+    </div>
+
+    <div class="copyright">
+      <span>© 2026 唯客 · 本页面为信息展示页</span>
+      <span>下载按钮为占位入口，页面数据为示意说明</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var items = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) {
+    for (var i = 0; i < items.length; i++) items[i].classList.add('in');
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+  for (var j = 0; j < items.length; j++) io.observe(items[j]);
+})();
+</script>
+
+</body>
+</html>
